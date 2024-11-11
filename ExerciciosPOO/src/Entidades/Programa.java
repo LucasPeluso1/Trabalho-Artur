@@ -1,6 +1,6 @@
 package Entidades;
 
-import java.util.List;
+
 import java.util.Scanner;
 
 public class Programa {
@@ -10,6 +10,7 @@ public class Programa {
 
 		};
 		Scanner scanner = new Scanner(System.in);
+		int opcao;
 
 		loja.adicionarDisco(new CD("The Dark Side Of The Moon", "Pink Floyd", 1973, 10));
 		loja.adicionarDisco(new CD("Love Yourself", "BTS", 2018, 26));
@@ -17,10 +18,10 @@ public class Programa {
 		loja.adicionarDisco(new Vinil("B-Day", "Beyonce", 2006, 11));
 		loja.adicionarDisco(new Vinil("Fine Line", "Harry Styles", 2019, 12));
 		loja.adicionarDisco(new Vinil("Sobrevivendo No Inferno", "Racionais MC'S", 1997, 12));
-		loja.adicionarDisco(new CD("Gal Tropical", "Gal COsta", 1979, 12));
+		loja.adicionarDisco(new CD("Gal Tropical", "Gal Costa", 1979, 12));
 
-		int opcao;
 		do {
+						System.out.println("-------------Bem Vindo a Vinyl Paradise!-------------");
 			System.out.println("Menu:");
 			System.out.println("1. Incluir Disco");
 			System.out.println("2. Alterar Disco");
@@ -31,7 +32,7 @@ public class Programa {
 			System.out.println("7. Sair");
 			System.out.print("Escolha uma opção: ");
 			opcao = scanner.nextInt();
-			scanner.nextLine(); 
+			scanner.nextLine();
 
 			switch (opcao) {
 			case 1:
@@ -51,15 +52,18 @@ public class Programa {
 					int numeroFaixas = scanner.nextInt();
 					scanner.nextLine();
 					loja.adicionarDisco(new CD(titulo, artista, anoLancamento, numeroFaixas));
+
 				} else if (tipo == 2) {
 					System.out.print("Diâmetro do Vinil (em polegadas): ");
 					double diametro = scanner.nextDouble();
 					scanner.nextLine();
 					loja.adicionarDisco(new Vinil(titulo, artista, anoLancamento, diametro));
+
 				} else {
 					System.out.println("Tipo de disco inválido!");
 				}
 				break;
+
 			case 2:
 				System.out.print("Título do Disco a ser alterado: ");
 				String tituloAlterar = scanner.nextLine();
@@ -73,33 +77,39 @@ public class Programa {
 				System.out.print("Novo Tipo de Disco (1 para CD, 2 para Vinil): ");
 				int novoTipo = scanner.nextInt();
 				scanner.nextLine();
+
 				if (novoTipo == 1) {
 					System.out.print("Novo Número de Faixas: ");
 					int novoNumeroFaixas = scanner.nextInt();
 					scanner.nextLine();
 					loja.alterarDisco(tituloAlterar,
-							new CD(novoTitulo, novoArtista, novoAnoLancamento, novoNumeroFaixas));
+					new CD(novoTitulo, novoArtista, novoAnoLancamento, novoNumeroFaixas));
+
 				} else if (novoTipo == 2) {
 					System.out.print("Novo Diâmetro do Vinil (em polegadas): ");
 					double novoDiametro = scanner.nextDouble();
 					scanner.nextLine();
 					loja.alterarDisco(tituloAlterar,
 							new Vinil(novoTitulo, novoArtista, novoAnoLancamento, novoDiametro));
+
 				} else {
 					System.out.println("Tipo de disco inválido!");
 				}
 				break;
+
 			case 3:
 				System.out.print("Título do Disco a ser excluído: ");
 				String tituloExcluir = scanner.nextLine();
 				loja.removerDisco(tituloExcluir);
 				break;
+
 			case 4:
 				System.out.println("Listando todos os discos:");
 				for (Disco disco : loja.listarDiscos()) {
 					System.out.println(disco);
 				}
 				break;
+
 			case 5:
 				System.out.print("Título do Disco a ser buscado: ");
 				String tituloBuscar = scanner.nextLine();
@@ -110,17 +120,21 @@ public class Programa {
 					System.out.println("Disco não encontrado!");
 				}
 				break;
+
 			case 6:
 				System.out.println("Listando todos os discos ordenados por título:");
 				for (Disco discoOrdenado : loja.listarDiscosOrdenadosPorTitulo()) {
 					System.out.println(discoOrdenado);
 				}
 				break;
+
 			case 7:
 				System.out.println("Saindo...");
 				break;
+
 			default:
 				System.out.println("Opção inválida!");
+
 			}
 		} while (opcao != 7);
 		scanner.close();

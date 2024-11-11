@@ -1,7 +1,5 @@
 package Entidades;
 
-import Entidades.Edicoes;
-import Entidades.Generos;
 
 public abstract class Disco {
 	private String titulo;
