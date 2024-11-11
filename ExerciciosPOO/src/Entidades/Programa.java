@@ -6,54 +6,18 @@ import java.util.Scanner;
 public class Programa {
 
 	public static void main(String[] args) {
-		GerenciamentoDeDiscos loja = new GerenciamentoDeDiscos() {
+		Loja loja = new Loja() {
 
-			@Override
-			public void removerDisco(String titulo) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public List<Disco> listarDiscosOrdenadosPorTitulo() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public List<Disco> listarDiscos() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public Disco buscarDisco(String titulo) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public void alterarDisco(String titulo, Disco disco) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void adicionarDisco(Disco disco) {
-				// TODO Auto-generated method stub
-
-			}
 		};
 		Scanner scanner = new Scanner(System.in);
 
-		// Adicionar discos automaticamente
-		loja.adicionarDisco(new CD("The Dark Side Of The Moon", "Pink Floyd", 2001, 10));
-		loja.adicionarDisco(new CD("Album2", "Artista2", 2002, 12));
-		loja.adicionarDisco(new CD("Album3", "Artista3", 2003, 14));
-		loja.adicionarDisco(new Vinil("Album4", "Artista4", 2004, 12.0));
-		loja.adicionarDisco(new Vinil("Album5", "Artista5", 2005, 10.0));
-		loja.adicionarDisco(new Vinil("Album6", "Artista6", 2006, 14.0));
-		loja.adicionarDisco(new CD("Album7", "Artista7", 2007, 16));
+		loja.adicionarDisco(new CD("The Dark Side Of The Moon", "Pink Floyd", 1973, 10));
+		loja.adicionarDisco(new CD("Love Yourself", "BTS", 2018, 26));
+		loja.adicionarDisco(new CD("Dangerously In Love", "Beyonce", 2003, 16));
+		loja.adicionarDisco(new Vinil("B-Day", "Beyonce", 2006, 11));
+		loja.adicionarDisco(new Vinil("Fine Line", "Harry Styles", 2019, 12));
+		loja.adicionarDisco(new Vinil("Sobrevivendo No Inferno", "Racionais MC'S", 1997, 12));
+		loja.adicionarDisco(new CD("Gal Tropical", "Gal COsta", 1979, 12));
 
 		int opcao;
 		do {
@@ -67,7 +31,7 @@ public class Programa {
 			System.out.println("7. Sair");
 			System.out.print("Escolha uma opção: ");
 			opcao = scanner.nextInt();
-			scanner.nextLine(); // Consumir nova linha
+			scanner.nextLine(); 
 
 			switch (opcao) {
 			case 1:
@@ -81,6 +45,7 @@ public class Programa {
 				System.out.print("Tipo de Disco (1 para CD, 2 para Vinil): ");
 				int tipo = scanner.nextInt();
 				scanner.nextLine();
+
 				if (tipo == 1) {
 					System.out.print("Número de Faixas: ");
 					int numeroFaixas = scanner.nextInt();

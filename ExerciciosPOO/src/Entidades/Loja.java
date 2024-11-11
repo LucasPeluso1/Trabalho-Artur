@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Loja implements GerenciamentoDeDiscos {
-	 private List<Disco> discos;
+	 private List<Disco> discos = new ArrayList<>();
 
 	    public void LojaDeDiscos() {
 	        discos = new ArrayList<>();
