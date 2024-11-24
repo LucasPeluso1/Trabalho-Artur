@@ -1,19 +1,18 @@
 package Entidades;
 
-
+//Classe abstrata Disco que serve como base para CDs e Vinis
 public abstract class Disco {
+ // Atributos comuns a todos os discos
 	private String titulo;
 	private String artista;
 	private int anoLancamento;
-	
-
 
 	public Disco(String titulo, String artista, int anoLancamento) {
 		super();
 		this.titulo = titulo;
 		this.artista = artista;
 		this.anoLancamento = anoLancamento;
-	
+
 	}
 
 	public String getTitulo() {

@@ -1,7 +1,7 @@
 package sevicoAluguel;
 
 import java.time.LocalDate;
-
+//Classe Aluguel que representa o aluguel de um disco
 public class Aluguel {
 	private LocalDate dataDevolucao;
 	private LocalDate dataAlugado;
