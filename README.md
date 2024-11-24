@@ -1,6 +1,11 @@
 Projeto de Programação Orientada a Objetos
 
-Prof. Artur Henrique Kronbauer
+Prof. Artur Henrique Kronbauer;
+Alunos:
+Lucas Nascimento Angelo Peluso;
+Matheus Nascimento Angelo de Souza;
+Stephanie Vieira Marques;
+
 Descrição geral
 Nesse projeto será criado um sistema com funcionalidade de cadastro e gerenciamento de registros. O
 contexto/temática do sistema a ser desenvolvido é de livre escolha da equipe.
