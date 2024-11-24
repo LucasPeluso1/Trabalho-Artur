@@ -14,8 +14,6 @@ public abstract class Disco {
 		this.artista = artista;
 		this.anoLancamento = anoLancamento;
 	
-		
-	
 	}
 
 	public String getTitulo() {

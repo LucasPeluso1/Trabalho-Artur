@@ -1,9 +1,11 @@
-package Entidades;
+package gerencia;
 
 import java.util.List;
 
+import Entidades.Disco;
+
 public interface GerenciamentoDeDiscos {
-	  void adicionarDisco(Disco disco);
+	    void adicionarDisco(Disco disco);
 	    void alterarDisco(String titulo, Disco disco);
 	    void removerDisco(String titulo);
 	    Disco buscarDisco(String titulo);
